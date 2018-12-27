@@ -30,7 +30,6 @@ public class Assignment6 {
             sqle.printStackTrace(System.err);
             System.exit(0);
         }
-
         int choice;
 
         try {
@@ -99,10 +98,8 @@ public class Assignment6 {
             } catch (Exception e) {}
         }
     }
-
     /**
      * Creates a new student and inserts them into the students table.
-     * 
      */
 
     public static void createStudent() {
@@ -127,14 +124,12 @@ public class Assignment6 {
             sqle.printStackTrace(System.err);
         }
     }
-
     /**
      * Adds grades into the grades table for an assignment to each student in the students table. 
      * 
      * @param   assignment    An int value representing the assignment number.
      * 
      */
-
     public static void addGrade(int assignment) {
         int numChanges = 0;
         try {
@@ -148,11 +143,8 @@ public class Assignment6 {
             sqle.printStackTrace(System.err);
         }
     }
-
     /**
      * Lists the IDs and names for each student in the students table. 
-     * 
-     * 
      */
 
     public static void listStudents() {
@@ -161,11 +153,8 @@ public class Assignment6 {
             System.out.println(s.getID() + "\t" + s.getFirstName() + "\t" + s.getLastName());
         }
     }
-
     /**
-     * Lists all the grades in the grades table for each assignment for each student. 
-     * 
-     * 
+     * Lists all the grades in the grades table for each assignment for each student.
      */
 
     public static void listGrades() {
@@ -187,12 +176,8 @@ public class Assignment6 {
             sqle.printStackTrace(System.err);
         }
     }
-
     /**
      * Lists all the grades in the grades table for each assignment for a particular student. 
-     * 
-     * @param   studentID    An int value representing the student ID.
-     * 
      */
 
     public static void listGradesForStudent(int studentID) {
@@ -214,14 +199,13 @@ public class Assignment6 {
             sqle.printStackTrace(System.err);
         }
     }
-
     /**
      * Lists all the grades in the grades table for a particular assignment for each student. 
      * 
      * @param   assignmentNum    An int value representing the assignment number.
      * 
      */
-
+     
     public static void listGradesForAssignment(int assignmentNum) {
         try {
             ResultSet rs = statement.executeQuery("SELECT * FROM grades WHERE ASSIGNMENT='" + assignmentNum + "'");
@@ -241,15 +225,8 @@ public class Assignment6 {
             sqle.printStackTrace(System.err);
         }
     }
-
     /**
      * Updates the grade in the grades table for a specific student's assignment. 
-     * 
-     * @param   studentID    An int value representing the student ID.
-     * 
-     * @param   assignmentNum   An int value representing the assignment number.
-     * 
-     * @param   grade   A char value of the grade that will be added to the grades table.
      * 
      */
 
@@ -261,12 +238,10 @@ public class Assignment6 {
             sqle.printStackTrace(System.err);
         }
     }
-
     /**
      * Prints the user menu to the console.
      *
      */
-
     public static void printMenu() {
         System.out.println();
         System.out.println("Select an item from the following menu");
@@ -278,11 +253,6 @@ public class Assignment6 {
         System.out.println("*****************************************");
     }
 }
-
-
-
-
-
 /**
  * This class represents a student object. The student has an ID, 
  * first name, and last name. These variables are private but can be 
@@ -291,7 +261,7 @@ public class Assignment6 {
  * @author  Anthony Grant
  * @version %I%, %G%
  */
-
+ 
 public class Student {
     private int id;
     private String firstName;
@@ -312,75 +282,28 @@ public class Student {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
-    }
-
-    /**
-     * Gets the student ID.
-     * 
-     * @return  the student ID.
-     */
-    
+    } 
     public int getID() {
         return id;
     }
-
-    /**
-     * Sets the student ID.
-     * 
-     * @param  id   The student id number.
-     */
-
     public void setID(int id) {
         this.id = id;
     }
-
-    /**
-     * Gets the student's first name.
-     * 
-     * @return  the student's first name.
-     */
-
     public String getFirstName() {
         return firstName;
     }
-
-    /**
-     * Sets the student's first name.
-     * 
-     * @param  firstName   The student's first name.
-     */
-
     public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
-
-    /**
-     * Gets the student's last name.
-     * 
-     * @return  the student's last name.
-     */
-
     public String getLastName() {
         return lastName;
     }
-
-    /**
-     * Sets the student's last name.
-     * 
-     * @param  lastName   The student's last name.
-     */
-
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
 }
-
-
-
-
 /**
- * A very basic keyboard reader class I created to expediate entering data
- * into a program
+ * A very basic keyboard reader class I created to expediate entering data into a program
  * @author  Anthony Grant
  * @version %I%, %G%
  */
@@ -394,11 +317,9 @@ public class KeyboardReader {
     static {
         in = new BufferedReader(new InputStreamReader(System.in));
     }
-
     public static final boolean readBoolean() {
         return Boolean.parseBoolean(readLine());
     }
-
     public static final byte readByte() {
         do {
             try {
@@ -409,7 +330,6 @@ public class KeyboardReader {
             }
         } while (true);
     }
-
     public static final char readChar() {
         do {
             try {
@@ -419,7 +339,6 @@ public class KeyboardReader {
             }
         } while (true);
     }
-
     public static final double readDouble() {
         do {
             try {
@@ -429,7 +348,6 @@ public class KeyboardReader {
             }
         } while (true);
     }
-
     public static final int readInt() {
         do {
             try {
@@ -439,7 +357,6 @@ public class KeyboardReader {
             }
         } while (true);
     }
-
     public static final float readFloat() {
         do {
             try {
@@ -449,7 +366,6 @@ public class KeyboardReader {
             }
         } while (true);
     }
-
     public static final java.lang.String readLine() {
         do {
             try {
@@ -459,7 +375,6 @@ public class KeyboardReader {
             }
         } while (true);
     }
-
     public static final long readLong() {
         do {
             try {
@@ -469,7 +384,6 @@ public class KeyboardReader {
             }
         } while (true);
     }
-
     public static final short readShort() {
         do {
             try {
@@ -479,5 +393,4 @@ public class KeyboardReader {
             }
         } while (true);
     }
-
 }
